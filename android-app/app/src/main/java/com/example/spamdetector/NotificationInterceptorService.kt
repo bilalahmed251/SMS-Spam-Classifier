@@ -16,9 +16,9 @@ import android.os.Looper
 class NotificationInterceptorService : NotificationListenerService() {
 
     private val TAG = "SpamInterceptor"
-    // CHANGE THIS IP TO YOUR COMPUTER'S LOCAL IP ADDRESS BEFORE COMMITTING AND PUSHING!
-    // Example: "http://192.168.1.100:8000/analyze"
-    private val BACKEND_URL = "http://192.168.1.100:8000/analyze"
+    // We are pointing this to your computer's exact Wi-Fi IP address!
+    // As long as your phone and PC are on the same Wi-Fi, it will work perfectly.
+    private val BACKEND_URL = "http://192.168.1.6:8000/analyze"
 
     override fun onNotificationPosted(sbn: StatusBarNotification) {
         val packageName = sbn.packageName
