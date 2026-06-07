@@ -77,5 +77,7 @@ def analyze_message(request: MessageRequest):
     )
 
 if __name__ == "__main__":
-    # Runs the server on all IP addresses (so your phone can connect to it over WiFi)
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    # Runs the server on all IP addresses (so your phone or the internet can connect)
+    uvicorn.run(app, host="0.0.0.0", port=port)
